@@ -25,7 +25,7 @@ export const Apresentation = styled.div`
     max-width: 100vw;
     padding: 0 2rem;
     .display-text {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     .running-text {
