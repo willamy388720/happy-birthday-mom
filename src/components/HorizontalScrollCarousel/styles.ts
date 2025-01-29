@@ -35,7 +35,7 @@ export const Motion = styled(motion.div)`
 
   @media ${breakpoints.sm} {
     gap: 3rem;
-    padding-right: 150rem;
+    padding-right: 120rem;
     padding-left: 0rem;
   }
 `;
