@@ -1,5 +1,5 @@
 import { Display, TextNormal } from "@styles/typography";
-import { Apresentation, Content } from "./styles";
+import { Apresentation, Content, DragDownText } from "./styles";
 import { DivWithAnimation } from "@components/DivWithAnimation";
 import { HorizontalScrollCarousel } from "@components/HorizontalScrollCarousel";
 
@@ -39,11 +39,11 @@ export function Home() {
               outViewAnimation={{ opacity: 0, y: -100 }}
               transition={{ duration: 0.7, ease: "easeInOut" }}
             >
-              <div style={{ textAlign: "center" }}>
+              <DragDownText>
                 <TextNormal size="8" weight="thin">
                   Arrasta para baixo
                 </TextNormal>
-              </div>
+              </DragDownText>
             </DivWithAnimation>
           </Apresentation>
         </Content>

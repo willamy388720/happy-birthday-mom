@@ -16,12 +16,12 @@ export const Apresentation = styled.div`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
 
   text-align: justify;
 
   @media ${breakpoints.sm} {
-    gap: 0;
+    gap: 0rem;
     max-width: 100vw;
     padding: 0 2rem;
     .display-text {
@@ -29,7 +29,15 @@ export const Apresentation = styled.div`
     }
 
     .running-text {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
+  }
+`;
+
+export const DragDownText = styled.div`
+  text-align: center;
+
+  @media ${breakpoints.sm} {
+    margin-top: -2rem;
   }
 `;
