@@ -29,7 +29,7 @@ export function HorizontalScrollCarousel({
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    ["1%", `-${width <= 1366 ? 68 : width <= 1024 ? 300 : 55}%`]
+    ["1%", `-${width <= 1366 ? 68 : width <= 1024 ? 10 : 55}%`]
   );
 
   const handleInteractionStart = () => {

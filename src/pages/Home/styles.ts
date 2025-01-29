@@ -21,14 +21,15 @@ export const Apresentation = styled.div`
   text-align: justify;
 
   @media ${breakpoints.sm} {
+    gap: 0;
     max-width: 100vw;
     padding: 0 2rem;
     .display-text {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     .running-text {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 `;

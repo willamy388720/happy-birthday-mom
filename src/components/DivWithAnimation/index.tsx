@@ -1,5 +1,5 @@
-import { ReactNode, useEffect, useState } from "react";
-import { motion, MotionProps } from "framer-motion";
+import { ReactNode, useRef } from "react";
+import { motion, MotionProps, useInView } from "framer-motion";
 
 interface DivWithAnimationProps {
   children: ReactNode;
@@ -18,29 +18,12 @@ export function DivWithAnimation({
   outViewAnimation,
   transition,
 }: DivWithAnimationProps) {
-  const [isInView, setIsInView] = useState(false);
-
-  const handleVisibilityChange = (inView: boolean) => {
-    setIsInView(inView);
-  };
-
-  useEffect(() => {
-    const options = { threshold: 0.5 };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => handleVisibilityChange(entry.isIntersecting));
-    }, options);
-
-    const section = document.querySelector(`#${id}`);
-    if (section) observer.observe(section);
-
-    return () => {
-      if (section) observer.unobserve(section);
-    };
-  }, [id]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
 
   return (
     <motion.div
+      ref={ref}
       id={id}
       initial={initialAnimation}
       animate={isInView ? inViewAnimation : outViewAnimation}
